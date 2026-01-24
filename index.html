@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="Javascript/theme.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="Images/Logo.png" type="image/png">
+  <title>Raunak Portfolio</title>
+</head>
+<body class="font-sans bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+  <div class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header
+      class="sticky top-0 z-30 border-b border-slate-200 bg-slate-50/80 dark:bg-slate-950/80 dark:border-slate-800 backdrop-blur">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="#home" class="flex items-center gap-2">
+          <div class="flex h-8 w-8 items-center justify-center rounded-full overflow-hidden">
+            <img src="Images/images.jpg" alt="Profile" class="h-full w-full object-cover">
+          </div>
+          <span class="text-sm font-semibold tracking-tight">
+            Raunak Portfolio
+          </span>
+        </a>
+        <div class="hidden items-center gap-6 text-sm md:flex">
+          <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+          <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+          <!-- <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a> -->
+          <a href="#certificates"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certificates</a>
+          <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+          <!-- Theme toggle button -->
+          <button type="button" onclick="toggleTheme()"
+            class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800 transition-colors"
+            aria-label="Toggle theme">
+            <!-- Sun icon -->
+            <svg class="h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="4" stroke-width="1.5" />
+              <path
+                d="M12 3v2.5M12 18.5V21M4.22 4.22l1.77 1.77M17.99 17.99l1.77 1.77M3 12h2.5M18.5 12H21M4.22 19.78l1.77-1.77M17.99 6.01l1.77-1.77"
+                stroke-width="1.5" />
+            </svg>
+            <!-- Moon icon -->
+            <svg class="hidden h-4 w-4 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 12.79A9 9 0 0 1 12.21 3 6.5 6.5 0 0 0 12 16.5 6.5 6.5 0 0 0 21 12.79Z" stroke-width="1.5" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- Mobile nav -->
+    <div
+      class="border-b border-slate-200 bg-slate-50/90 px-4 py-2 text-sm md:hidden dark:border-slate-800 dark:bg-slate-950/90">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-3">
+        <div class="flex flex-wrap gap-3">
+          <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+          <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+          <!-- <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a> -->
+        </div>
+        <button type="button" onclick="toggleTheme()"
+          class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800 transition-colors"
+          aria-label="Toggle theme (mobile)">
+          <svg class="h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="4" stroke-width="1.5" />
+            <path
+              d="M12 3v2.5M12 18.5V21M4.22 4.22l1.77 1.77M17.99 17.99l1.77 1.77M3 12h2.5M18.5 12H21M4.22 19.78l1.77-1.77M17.99 6.01l1.77-1.77"
+              stroke-width="1.5" />
+          </svg>
+          <svg class="hidden h-4 w-4 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M21 12.79A9 9 0 0 1 12.21 3 6.5 6.5 0 0 0 12 16.5 6.5 6.5 0 0 0 21 12.79Z" stroke-width="1.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Main content -->
+    <main class="flex-1">
+      <!-- Hero -->
+      <section id="home"
+        class="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 dark:border-slate-800">
+        <div class="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12 md:flex-row md:items-center md:py-16">
+          <div class="flex-1 space-y-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+              BCA Second Year • Fresher
+            </p>
+            <h1 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl whitespace-nowrap">
+              Hi, I am <span class="text-blue-600 dark:text-blue-400">Raunak Suman Singh</span>
+            </h1>
+            <p class="max-w-xl text-sm text-slate-600 dark:text-slate-300">
+              Front-end developer and BCA student with a passion for creating clean, responsive, and accessible web
+              experiences. Seeking internships and entry-level roles to contribute to real-world projects and grow
+              professionally.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="#projects"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2
+                text-slate-800 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800
+                transition-transform transform hover:-translate-y-1 hover:scale-105 duration-200 shadow-sm hover:shadow-md">View Projects
+              </a>
+              <a href="#contact"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 
+                 text-slate-800 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800
+                 transition-transform transform hover:-translate-y-1 hover:scale-105 duration-200 shadow-sm hover:shadow-md"> Contact Me
+              </a>
+              <a href="Images/Resume.pdf" download="Raunak-Suman-Singh-Resume.pdf" class="inline-flex items-center justify-center
+                 rounded-full border border-slate-600 px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50
+                 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-slate-900 transition-transform transform hover:-translate-y-1
+                 hover:scale-105 duration-200 shadow-sm hover:shadow-md">Download Resume
+              </a>
+            </div>
+            <div class="flex flex-wrap gap-4 text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1">
+                <span class="h-2 w-2 rounded-full bg-green-500"></span>
+                <span>Open to internships</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="font-medium text-slate-700 dark:text-slate-200">Location:</span>
+                <span>Ahmedabad, Gujarat, India</span>
+              </div>
+            </div>
+          </div>
+          <!-- Profile card -->
+          <div class="flex-1">
+            <div
+              class="mx-auto max-w-xs rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div class="aspect-[4/5] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+                <img src="Images/profile-photo.jpg" alt="Profile photo" class="h-full w-full object-cover" />
+              </div>
+              <div class="mt-4 space-y-1 text-sm">
+                <p class="font-semibold">Raunak Suman Singh</p>
+                <p class="text-slate-500 dark:text-slate-400">BCA Second Year • Student</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Interests: Web Development, Python, DBMS, AI
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About -->
+      <section id="about" class="border-b border-slate-200 bg-white py-12 dark:border-slate-800 dark:bg-slate-900">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 class="text-xl font-semibold tracking-tight">About</h2>
+          <p class="mt-3 max-w-3xl text-sm text-slate-600 dark:text-slate-300">
+            Aspiring front-end developer and BCA student with hands-on experience in HTML, CSS, Basic JavaScript, and
+            responsive design. Passionate about building clean, user-friendly interfaces and eager to apply front-end
+            skills in real-world projects and internships.
+          </p>
+          <div class="mt-6 grid gap-6 text-sm md:grid-cols-3">
+            <div class="space-y-2">
+              <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                Education
+              </h3>
+              <p class="font-medium">BCA, Silver Oak College of Computer Apllication, Silver Oak University</p>
+              <p class="text-slate-500 dark:text-slate-400">
+                2024 – 2027 (Expected)
+              </p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">
+                CGPA (till now): 8.45 / 10
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                Focus Areas
+              </h3>
+              <ul class="space-y-1 text-slate-600 dark:text-slate-300">
+                <li>Frontend development (HTML, CSS, JavaScript)</li>
+                <li>Tailwind CSS & responsive design</li>
+              </ul>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                Highlights
+              </h3>
+              <ul class="space-y-1 text-slate-600 dark:text-slate-300">
+                <li>Built multiple mini projects for college</li>
+                <li>Actively participating in coding contests</li>
+                <li>Strong communication and teamwork</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Skills -->
+      <section id="skills" class="border-b border-slate-200 bg-slate-50 py-12 dark:border-slate-800 dark:bg-slate-950">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 class="text-xl font-semibold tracking-tight">Skills</h2>
+          <p class="mt-3 max-w-3xl text-sm text-slate-600 dark:text-slate-300">
+            A mix of technical and soft skills suitable for internships and entry-level software roles.
+          </p>
+          <div class="mt-6 grid gap-4 text-sm md:grid-cols-3">
+            <div class="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+              <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                Programming
+              </h3>
+              <ul class="mt-3 space-y-1 text-slate-600 dark:text-slate-300">
+                <li>C</li>
+                <li>C(Advance: With normal Oop)</li>
+                <li>Core Java</li>
+                <li>Python</li>
+                <li>Basic JavaScript</li>
+                <li>Basic Bootstrap</li>
+                <li>DBMS</li>
+                <li>M.S.Office</li>
+                <li>RDBMS</li>
+                <li>Advance Spreadsheet</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+              <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                Web & Tools
+              </h3>
+              <ul class="mt-3 space-y-1 text-slate-600 dark:text-slate-300">
+                <li>HTML5, CSS3, Basic JavaScript</li>
+                <li>Tailwind CSS</li>
+                <li>Git & GitHub basics</li>
+                <li>Pycharm</li>
+                <li>Oracle</li>
+                <li>VS Code / IDEs</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+              <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                Soft Skills
+              </h3>
+              <ul class="mt-3 space-y-1 text-slate-600 dark:text-slate-300">
+                <li>Problem-solving and analytical thinking</li>
+                <li>Team collaboration</li>
+                <li>Time management</li>
+                <li>Presentation and documentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects
+      <section id="projects" class="border-b border-slate-200 bg-white py-12 dark:border-slate-800 dark:bg-slate-900">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 class="text-xl font-semibold tracking-tight">Projects</h2>
+          <p class="mt-3 max-w-3xl text-sm text-slate-600 dark:text-slate-300">
+            Selected academic and personal projects that demonstrate programming skills, problem solving, and
+            understanding of core computer science concepts.
+          </p>
+          <div class="mt-6 grid gap-5 md:grid-cols-3">
+            <article
+              class="flex flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-950/60">
+              <h3 class="text-sm font-semibold">Student Result Management (Java + MySQL)</h3>
+              <p class="mt-2 text-xs text-slate-600 dark:text-slate-300">
+                Desktop application to manage student records, marks, and results with CRUD operations and basic
+                authentication.
+              </p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+                <li class="rounded-full bg-slate-100 px-2 py-0.5 dark:bg-slate-800">Java</li>
+                <li class="rounded-full bg-slate-100 px-2 py-0.5 dark:bg-slate-800">MySQL</li>
+                <li class="rounded-full bg-slate-100 px-2 py-0.5 dark:bg-slate-800">Swing / AWT</li>
+              </ul>
+              <div class="mt-3 flex items-center justify-between text-xs">
+                <span class="text-slate-500 dark:text-slate-400">Academic Project</span>
+                <a href="#" class="text-blue-600 hover:underline dark:text-blue-400">View Code</a>
+              </div>
+            </article>
+            <article
+              class="flex flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-950/60">
+              <h3 class="text-sm font-semibold">Personal Portfolio Website</h3>
+              <p class="mt-2 text-xs text-slate-600 dark:text-slate-300">
+                Responsive portfolio built using HTML, Tailwind CSS, and basic JavaScript with support for light/dark
+                mode and smooth scrolling.
+              </p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+                <li class="rounded-full bg-slate-100 px-2 py-0.5 dark:bg-slate-800">HTML</li>
+                <li class="rounded-full bg-slate-100 px-2 py-0.5 dark:bg-slate-800">Tailwind CSS</li>
+                <li class="rounded-full bg-slate-100 px-2 py-0.5 dark:bg-slate-800">JavaScript</li>
+              </ul>
+              <div class="mt-3 flex items-center justify-between text-xs">
+                <span class="text-slate-500 dark:text-slate-400">Personal Project</span>
+                <a href="#" class="text-blue-600 hover:underline dark:text-blue-400">Live Demo</a>
+              </div>
+            </article>
+            <article
+              class="flex flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-950/60">
+              <h3 class="text-sm font-semibold">Library Management System</h3>
+              <p class="mt-2 text-xs text-slate-600 dark:text-slate-300">
+                Simple console-based or web-based system to manage books, users, and issuing/returning operations.
+              </p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+                <li class="rounded-full bg-slate-100 px-2 py-0.5 dark:bg-slate-800">C / Java</li>
+                <li class="rounded-full bg-slate-100 px-2 py-0.5 dark:bg-slate-800">File handling / DBMS</li>
+              </ul>
+              <div class="mt-3 flex items-center justify-between text-xs">
+                <span class="text-slate-500 dark:text-slate-400">Academic Project</span>
+                <a href="#" class="text-blue-600 hover:underline dark:text-blue-400">Details</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section> -->
+      <!-- Certificates -->
+      <section id="certificates"
+        class="border-b border-slate-200 bg-slate-50 py-12 dark:border-slate-800 dark:bg-slate-950">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 class="text-xl font-semibold tracking-tight">Certificates</h2>
+          <p class="mt-3 max-w-3xl text-sm text-slate-600 dark:text-slate-300">
+            Certifications and achievements from online courses, workshops, and hackathons.
+            Use this section for college submissions and proof of skills.
+          </p>
+          <!-- GRID -->
+          <div class="mt-6 grid gap-6 grid-cols-1 md:grid-cols-3">
+            <!-- Certificate 1 -->
+            <figure
+              class="certificate-card overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+              <a href="Images/Great-Learning.jpg" target="_blank" class="block">
+                <div class="h-40 md:h-48 w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+                  <img src="Images/Great-Learning.jpg" alt="Introduction to Artificial Intelligence"
+                    class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300"
+                    onerror="this.style.display='none'" />
+                </div>
+              </a>
+              <figcaption class="p-3 text-xs">
+                <p class="font-semibold">
+                  Introduction to Artificial Intelligence – Great Learning
+                </p>
+                <p class="mt-1 text-slate-500 dark:text-slate-400">
+                  Completed an introductory course on Artificial Intelligence.
+                </p>
+              </figcaption>
+            </figure>
+            <!-- Certificate 2 -->
+            <figure
+              class="certificate-card overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+              <a href="Images/C&C++.jpg" target="_blank" class="block">
+                <div class="h-40 md:h-48 w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+                  <img src="Images/C&C++.jpg" alt="C and C++ Programming"
+                    class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300"
+                    onerror="this.style.display='none'" />
+                </div>
+              </a>
+              <figcaption class="p-3 text-xs">
+                <p class="font-semibold">
+                  C / C++ – Itronix Solutions
+                </p>
+                <p class="mt-1 text-slate-500 dark:text-slate-400">
+                  Learned C and C++ with OOP concepts.
+                </p>
+              </figcaption>
+            </figure>
+            <!-- Certificate 3 -->
+            <figure
+              class="certificate-card overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+              <a href="Images/Py-with-AI.jpg" target="_blank" class="block">
+                <div class="h-40 md:h-48 w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+                  <img src="Images/Py-with-AI.jpg" alt="Python & GenAI"
+                    class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300"
+                    onerror="this.style.display='none'" />
+                </div>
+              </a>
+              <figcaption class="p-3 text-xs">
+                <p class="font-semibold">
+                  Python & GenAI for Advanced Analytics – Udemy
+                </p>
+                <p class="mt-1 text-slate-500 dark:text-slate-400">
+                  Built analytics models using Python and Generative AI.
+                </p>
+              </figcaption>
+            </figure>
+            <!-- Certificate 4 -->
+            <figure class="certificate-card extra-cert hidden overflow-hidden rounded-2xl border border-slate-200 
+                    bg-white dark:border-slate-800 dark:bg-slate-900">
+              <a href="Images/AWS.jpg" target="_blank" class="block">
+                <div class="h-40 md:h-48 w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+                  <img src="Images/AWS.jpg" alt="AWS"
+                    class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300"
+                    onerror="this.style.display='none'" />
+                </div>
+              </a>
+              <figcaption class="p-3 text-xs">
+                <p class="font-semibold">
+                  Amazon Web Services (AWS) – Itronix Solutions
+                </p>
+                <p class="mt-1 text-slate-500 dark:text-slate-400">
+                  Completed a course on cloud computing fundamentals and AWS services.
+                </p>
+              </figcaption>
+            </figure>
+            <!-- Certificate 5 -->
+            <figure class="certificate-card extra-cert hidden overflow-hidden rounded-2xl border border-slate-200 
+                    bg-white dark:border-slate-800 dark:bg-slate-900">
+              <a href="Images/RAG.jpg" target="_blank" class="block">
+                <div class="h-40 md:h-48 w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+                  <img src="Images/RAG.jpg" alt="Certificate 6"
+                    class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300"
+                    onerror="this.style.display='none'" />
+                </div>
+              </a>
+              <figcaption class="p-3 text-xs">
+                <p class="font-semibold">
+                  Introduction to Retrieval Augmented Generation (RAG) – IBM SkillsBuild
+                </p>
+                <p class="mt-1 text-slate-500 dark:text-slate-400">
+                  Completed the course on Retrieval Augmented Generation (RAG) covering core concepts and applications.
+                </p>
+              </figcaption>
+            </figure>
+            <!-- Certificate 6  -->
+            <figure class="certificate-card extra-cert hidden overflow-hidden rounded-2xl border border-slate-200 
+                    bg-white dark:border-slate-800 dark:bg-slate-900">
+              <a href="Images/IOT.jpg" target="_blank" class="block">
+                <div class="h-40 md:h-48 w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+                  <img src="Images/IOT.jpg" alt="IOT"
+                    class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300"
+                    onerror="this.style.display='none'" />
+                </div>
+              </a>
+              <figcaption class="p-3 text-xs">
+                <p class="font-semibold">
+                  Internet of Things (IoT) – Itronix Solutions
+                </p>
+                <p class="mt-1 text-slate-500 dark:text-slate-400">
+                  Completed a course on IoT fundamentals and hands-on device integration.
+                </p>
+              </figcaption>
+            </figure>
+            <!-- Certificate 7  -->
+            <figure class="certificate-card extra-cert hidden overflow-hidden rounded-2xl border border-slate-200 
+                    bg-white dark:border-slate-800 dark:bg-slate-900">
+              <a href="Images/Generetive-AI.jpg" target="_blank" class="block">
+                <div class="h-40 md:h-48 w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+                  <img src="Images/Generetive-AI.jpg" alt="Certificate 6"
+                    class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300"
+                    onerror="this.style.display='none'" />
+                </div>
+              </a>
+              <figcaption class="p-3 text-xs">
+                <p class="font-semibold">
+                  Ethical Considerations for Generative AI – IBM SkillsBuild
+                </p>
+                <p class="mt-1 text-slate-500 dark:text-slate-400">
+                  Completed an IBM SkillsBuild course focused on ethical principles, responsible AI usage, and
+                  governance in generative AI systems.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="mt-8 text-center">
+            <button id="viewMoreBtn"
+              class="rounded-xl border border-slate-300 px-6 py-2 text-sm font-medium text-slate-700
+               hover:text-slate-900 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800
+               transition-transform transform hover:-translate-y-1 hover:scale-105 duration-200 shadow-sm hover:shadow-md"> View More
+            </button>
+          </div>
+      </section>
+      <!-- Contact -->
+      <section id="contact" class="bg-white py-12 dark:bg-slate-900">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 class="text-xl font-semibold tracking-tight">Contact</h2>
+          <p class="mt-3 max-w-3xl text-sm text-slate-600 dark:text-slate-300">
+            Available for internships, part-time opportunities, and entry-level roles. Feel free to reach out via email
+            or the form below.
+          </p>
+          <div class="mt-6 grid gap-8 md:grid-cols-[minmax(0,1.2fr),minmax(0,1fr)]">
+            <!-- Contact Form -->
+            <form id="contact-form" action="https://formsubmit.co/Raunakkumarsingh400@gmail.com" method="POST"
+              class="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+              <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="space-y-1 text-sm">
+                  <label for="name" class="block text-xs font-medium text-slate-700 dark:text-slate-200">
+                    Full Name
+                  </label>
+                  <input id="name" name="name" type="text" required placeholder="Your name" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 shadow-sm
+               focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-700
+               dark:bg-slate-900 dark:text-slate-100" />
+                </div>
+                <div class="space-y-1 text-sm">
+                  <label for="email" class="block text-xs font-medium text-slate-700 dark:text-slate-200">
+                    Email
+                  </label>
+                  <input id="email" name="email" type="email" required placeholder="yourname@gmail.com" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 shadow-sm
+               focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-700
+               dark:bg-slate-900 dark:text-slate-100" />
+                </div>
+              </div>
+              <div class="space-y-1 text-sm">
+                <label for="subject" class="block text-xs font-medium text-slate-700 dark:text-slate-200">
+                  Subject
+                </label>
+                <input id="subject" name="subject" type="text" required placeholder="Internship / Job opportunity"
+                  class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 shadow-sm
+             focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-700
+             dark:bg-slate-900 dark:text-slate-100" />
+              </div>
+              <div class="space-y-1 text-sm">
+                <label for="message" class="block text-xs font-medium text-slate-700 dark:text-slate-200">
+                  Message
+                </label>
+                <textarea id="message" name="message" rows="4" required placeholder="Write your message here..." class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 shadow-sm
+             focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-700
+             dark:bg-slate-900 dark:text-slate-100"></textarea>
+              </div>
+              <button type="submit" class="inline-flex items-center justify-center rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white
+           shadow-sm hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500
+           focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50 dark:focus-visible:ring-offset-slate-950
+           transition-transform transform hover:-translate-y-1 hover:scale-105 duration-200 hover:shadow-md">
+                Send Message
+              </button>
+            </form>
+             <!-- Contact Info -->
+            <div class="space-y-4 text-sm">
+              <div>
+                <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                  Direct Contact
+                </h3>
+                <ul class="mt-3 space-y-1 text-slate-600 dark:text-slate-300">
+                  <li><span class="font-medium">Email:</span> Raunakkumarsingh400@gmail.com</li>
+                  <li><span class="font-medium">Phone:</span> +91-7600955535 / 7484854440</li>
+                  <li><span class="font-medium">Location:</span> Ahmedabad, Gujarat, India</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                  Online Profiles
+                </h3>
+                <ul>
+                  <li>
+                    <a href="https://github.com/raunakkumarsingh400" target="_blank" rel="noopener noreferrer"
+                      class="text-blue-600 hover:underline dark:text-blue-400 flex items-center gap-2">
+                      <i class="fab fa-github"></i> GitHub
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/raunak-kumar-singhh-a90947321" target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-blue-600 hover:underline dark:text-blue-400 flex items-center gap-2">
+                      <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.blogger.com/profile/01121143772933991409" target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-blue-600 hover:underline dark:text-blue-400 flex items-center gap-2">
+                      <i class="fab fa-blogger"></i> Blogger
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.slideshare.net/raunakkumarsingh400" target="_blank" rel="noopener noreferrer"
+                      class="text-blue-600 hover:underline dark:text-blue-400 flex items-center gap-2">
+                      <i class="fab fa-slideshare"></i> SlideShare
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+         </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="border-t border-slate-200 bg-slate-50 py-4 text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 sm:flex-row">
+        <p>&copy; <span id="year"></span> Raunak Singh. All rights reserved.</p>
+        <p>Built with HTML, Tailwind CSS, and JavaScript.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="Javascript/script.js" defer></script>
+</body>
+</html>
